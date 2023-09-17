@@ -11,6 +11,12 @@ yarn dev
 # or
 pnpm dev
 ```
+## Setting Endpoint
+
+```
+#.env
+NEXT_API= your endpoint url
+```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
