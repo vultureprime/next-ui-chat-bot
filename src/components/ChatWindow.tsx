@@ -41,7 +41,7 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({
                 />
               </div>
               <div>
-                <p className='font-bold'>user</p>
+                <p className='font-bold'>User</p>
                 <p>{item.message}</p>
               </div>
             </div>
