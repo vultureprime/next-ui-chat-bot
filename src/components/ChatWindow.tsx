@@ -1,6 +1,7 @@
 import { LegacyRef } from 'react'
 import Image from 'next/image'
 import { CopyClipboard } from '@/components/CopyClipboard'
+import StreamingText from './StreamingText'
 
 interface Message {
   role: 'user' | 'ai'
@@ -27,7 +28,7 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({
       className='flex-1 overflow-y-auto p-4 space-y-8'
       id='chatWindow'
     >
-      {messages.map((item) => (
+      {messages.map((item, index) => (
         <div key={item.id} className='max-w-screen-md mx-auto w-full'>
           {item.role === 'user' ? (
             <div className='flex gap-x-8 '>
@@ -59,7 +60,12 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({
                   <p className='font-bold'>Ai</p>
                   <CopyClipboard content={item.message} />
                 </div>
-                <p>{item.message}</p>
+                <p>
+                  <StreamingText
+                    text={item.message}
+                    isTextStream={index === messages.length - 1}
+                  />
+                </p>
               </div>
             </div>
           )}
