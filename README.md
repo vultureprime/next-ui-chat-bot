@@ -15,7 +15,7 @@ pnpm dev
 
 ```
 #.env
-NEXT_API= http://54.224.205.28:3000/answer
+NEXT_API= your endpoint url
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
