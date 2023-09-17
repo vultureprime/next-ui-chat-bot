@@ -4,14 +4,21 @@ interface Props {
   text: string
   interval?: number
   isTextStream?: boolean
+  chatWindowRef: any
 }
 
 const StreamingText: React.FC<Props> = ({
   text,
   interval = 5,
   isTextStream = false,
+  chatWindowRef,
 }) => {
   const [displayedText, setDisplayedText] = useState('')
+  useEffect(() => {
+    if (chatWindowRef.current && isTextStream) {
+      chatWindowRef.current.scrollTop = chatWindowRef.current.scrollHeight
+    }
+  }, [displayedText])
 
   useEffect(() => {
     if (isTextStream) {

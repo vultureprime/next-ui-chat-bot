@@ -62,6 +62,7 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({
                 </div>
                 <p>
                   <StreamingText
+                    chatWindowRef={chatWindowRef}
                     text={item.message}
                     isTextStream={index === messages.length - 1}
                   />

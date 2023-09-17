@@ -50,12 +50,6 @@ export default function Chat() {
   }
 
   useEffect(() => {
-    if (chatWindowRef.current) {
-      chatWindowRef.current.scrollTop = chatWindowRef.current.scrollHeight
-    }
-  }, [answer])
-
-  useEffect(() => {
     document.querySelector('input')?.focus()
   }, [])
 
