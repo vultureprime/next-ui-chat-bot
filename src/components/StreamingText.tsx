@@ -21,7 +21,7 @@ const StreamingText: React.FC<Props> = ({
   }, [displayedText])
 
   useEffect(() => {
-    if (isTextStream) {
+    if (isTextStream && text.length < 120) {
       let i = 0
 
       const timer = setInterval(() => {
@@ -34,10 +34,12 @@ const StreamingText: React.FC<Props> = ({
       }, interval)
 
       return () => clearInterval(timer)
+    } else {
+      setDisplayedText(text)
     }
   }, [text, interval])
 
-  return <>{isTextStream ? displayedText : text}</>
+  return <>{displayedText}</>
 }
 
 export default StreamingText

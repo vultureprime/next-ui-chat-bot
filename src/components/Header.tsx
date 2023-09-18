@@ -14,7 +14,7 @@ const Header: React.FC<HeaderProps> = ({
   onEditToggle,
 }) => {
   return (
-    <div className='w-full flex flex-col bg-white py-8 gap-5'>
+    <div className='w-full flex flex-col bg-white py-8 gap-5 px-5'>
       <div className='flex items-center justify-end gap-x-2 max-w-screen-md w-full mx-auto'>
         <input
           type='text'
